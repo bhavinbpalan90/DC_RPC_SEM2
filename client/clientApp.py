@@ -33,7 +33,7 @@ with col2:
             file_path = str(os.getcwd()) + str('/Contents/') + str(Platform) + str('/') + str(fileName)
             #st.write(file_path)
             handle=open(file_path,"w")
-            content = str(server.movefile(str(Platform),str(fileName)))
+            content = str(server.movefile(str(Platform),str(fileName),str(input_ipaddress)))
             handle.write(content)
             st.write('File Downloaded and available at ' + str(file_path))
             handle.close()
