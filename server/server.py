@@ -65,14 +65,17 @@ def movefile(Platform, FileName):
             return 'File Not Found'
     else:
         logger.info("File not found locally. Need to check with nearby Server")
-        fileFound = getFilefromCloseServer('192.168.12.130', 8091,Platform,FileName)
-        logger.info('Response from Nearby Server: ' + fileFound)
-        if fileFound != 'Not Found':
-            fullpath = '../content/' + Platform + '/' + FileName
-            with open(fullpath, 'w') as file1:
-                contentLine = str(fileFound)
-                file1.write(contentLine + '\n')
-            return fileFound
+        nearestServer = '192.168.12.130'
+        if OriginServer != nearestServer:
+            fileFound = getFilefromCloseServer(str(nearestServer), 8080,Platform,FileName)
+            logger.info('Response from Nearby Server: ' + fileFound)
+            if fileFound != 'Not Found':
+                fullpath = '../content/' + Platform + '/' + FileName
+                with open(fullpath, 'w') as file1:
+                    contentLine = str(fileFound)
+                    file1.write(contentLine + '\n')
+                return fileFound
+        logger.info('Original Request Server is same as Next Server')
         return 'File Not Found'
         ## Get the Content from Another Server   
         
