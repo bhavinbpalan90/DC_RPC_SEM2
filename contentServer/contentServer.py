@@ -23,7 +23,7 @@ def save_uploadedfile(uploadedfile,platformName):
 
 
 def update_server():
-    server = RPCContentServer('192.168.12.130', 8080)
+    server = RPCContentServer(socket.gethostbyname(socket.gethostname()), 8080)
     server.connect()
     Content = pathlib.Path('../content/')
     for files in Content.rglob('*.*'):
