@@ -30,7 +30,7 @@ with col2:
                 os.mkdir(directory)
                 #st.write('directory created')
             ##file_path  = os.path.join(directory, fileName)
-            file_path = str(os.getcwd()) + str('\Contents\\') + str(Platform) + str('\\') + str(fileName)
+            file_path = str(os.getcwd()) + str('/Contents/') + str(Platform) + str('/') + str(fileName)
             #st.write(file_path)
             handle=open(file_path,"w")
             content = str(server.movefile(str(Platform),str(fileName)))
@@ -43,6 +43,6 @@ with col2:
 
 with col3:
     st.write('All files available locally are as below: ')
-    Content = pathlib.Path('Contents\\')
+    Content = pathlib.Path('Contents/')
     for files in Content.rglob('*.*'):
         st.write(files)
