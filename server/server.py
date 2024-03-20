@@ -26,7 +26,7 @@ fileFound = 'No'
 
 def registerFiles(fileName):
     logger.info("Register File Executed")
-    metadatafile = str(os.getcwd()) + "\metadataFile.txt"
+    metadatafile = str(os.getcwd()) + "/metadataFile.txt"
     with open(metadatafile, 'w') as file1:
         contentLine = str(fileName)
         file1.write(contentLine + '\n')
@@ -34,7 +34,7 @@ def registerFiles(fileName):
     
 def checkFileexistLocal(Platform, FileName):
     logger.info("Checking for " + Platform + " \ " + FileName + " on Local Server" )
-    metadatafile = str(os.getcwd()) + "\metadataFile.txt"
+    metadatafile = str(os.getcwd()) + "/metadataFile.txt"
     logger.info("Path for Metadata File is " + metadatafile)
     f = open(metadatafile, "r")
     lines = f.readlines()
