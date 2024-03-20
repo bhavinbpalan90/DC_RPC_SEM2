@@ -2,6 +2,7 @@ from rpcClient import RPCClient
 import os.path
 import streamlit as st
 import pathlib
+import socket
 
 st.set_page_config(layout="wide")
 col1, col2,col3 = st.columns([1,4,2])
