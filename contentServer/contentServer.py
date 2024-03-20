@@ -4,6 +4,7 @@ import streamlit as st
 from io import StringIO
 import os
 import pandas as pd
+import socket
 
 
 if not os.path.isdir('../content/Netflix'):
