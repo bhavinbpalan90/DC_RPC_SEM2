@@ -6,7 +6,7 @@ import pathlib
 st.set_page_config(layout="wide")
 col1, col2,col3 = st.columns([1,4,2])
 with col1:
-    input_ipaddress = st.text_input('Server IP Address','192.168.12.130')
+    input_ipaddress = st.text_input('Server IP Address',socket.gethostbyname(socket.gethostname()))
     input_port = st.text_input('Port No',8080)
 
 with col2:
